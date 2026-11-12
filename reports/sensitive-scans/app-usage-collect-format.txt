@@ -1,0 +1,135 @@
+        }
+
+        public String a(Context context) {
+            JSONObject jSONObject = new JSONObject();
+            ArrayList<a> arrayList = this.p;
+            if (arrayList != null && !arrayList.isEmpty()) {
+                try {
+                    StringBuilder sb = new StringBuilder();
+                    Iterator<a> it = this.p.iterator();
+                    long j = 0;
+                    long j2 = 0;
+                    while (it.hasNext()) {
+                        a next = it.next();
+                        sb.append(next.b).append("|");
+                        sb.append(next.f).append("|");
+                        sb.append(next.e).append("|");
+                        sb.append(next.g).append("|");
+                        sb.append(next.h).append("|");
+                        sb.append(next.f49a).append("|");
+                        sb.append(next.m).append("|");
+                        sb.append(next.k).append("|");
+                        sb.append(next.l).append("|");
+                        sb.append(next.i).append("|");
+                        sb.append(next.j);
+                        sb.append(PrivateConstance.NEWLINE);
+                        j2 += next.k + next.l;
+                        j += next.i + next.j;
+                    }
+                    this.f50a = DMDeviceInfoCollection.imei1(context);
+                    this.b = DMDeviceInfoCollection.imei2(context);
+                    this.n = j + "";
+                    this.o = j2 + "";
+                    this.j = DMDeviceInfoCollection.getBrand(context);
+                    this.k = DMDeviceInfoCollection.getModel(context);
+                    this.l = DMConfig.SDK_VERSION;
+                    this.m = System.currentTimeMillis();
+                    jSONObject.put("imei1", this.f50a);
+                    jSONObject.put("imei2", this.b);
+                    jSONObject.put("imsi1", this.e);
+                    jSONObject.put("imsi2", this.f);
+                    jSONObject.put("iccid1", this.g);
+                    jSONObject.put("totalFlowW", this.n);
+                    jSONObject.put("totalFlowD", this.o);
+                    jSONObject.put("iccid2", this.h);
+                    jSONObject.put("brand", this.j);
+                    jSONObject.put("model", this.k);
+                    jSONObject.put("sdkVersion", this.l);
+                    jSONObject.put("sendTime", this.m);
+                    jSONObject.put("startTime", this.c);
+                    jSONObject.put("endTime", this.d);
+                    jSONObject.put("logAppAry", sb.toString());
+                    return jSONObject.toString();
+                } catch (Exception e) {
+                    LogUtils.err(PublicConstance.LOG_TAG_APP, e.getMessage());
+                }
+            }
+            return null;
+        }
+
+        public String toString() {
+            StringBuilder append = new StringBuilder().append("{\"startTime\":").append(this.c).append(", \"endTime\":").append(this.d).append(", \"imsi1\":'").append(LogUtils.safetyLog(this.e)).append("', \"imsi2\":'").append(LogUtils.safetyLog(this.f)).append("', \"iccid1\":'").append(LogUtils.safetyLog(this.g)).append("', \"iccid2\":'").append(LogUtils.safetyLog(this.h)).append("', \"tableName\":'").append(this.i).append("', \"totalFlowW\":'").append(this.n).append("', \"totalFlowD\":'").append(this.o).append("', \"sendTime\":").append(this.m).append(", \"logAppAry\":");
+            ArrayList<a> arrayList = this.p;
+            return append.append(arrayList == null ? 0 : arrayList.size()).append('}').toString();
+        }
+    }
+
+    public a() {
+    }
+
+    public a(Cursor cursor) {
+        this.f49a = cursor.getString(cursor.getColumnIndex(DbConstants.COLUMN_PKG_NAME));
+        this.b = cursor.getString(cursor.getColumnIndex(DbConstants.COLUMN_APP_NAME));
+        this.c = cursor.getInt(cursor.getColumnIndex(DbConstants.COLUMN_UID));
+        this.n = cursor.getInt(cursor.getColumnIndex(DbConstants.COLUMN_LAUNCH_COUNT_TEMP));
+        this.o = cursor.getLong(cursor.getColumnIndex(DbConstants.COLUMN_USE_TIME_TEMP));
+        this.p = cursor.getLong(cursor.getColumnIndex(DbConstants.COLUMN_USAGE_FIRST_TIME));
+        this.k = cursor.getLong(cursor.getColumnIndex(DbConstants.COLUMN_MOBILE_RX));
+        this.l = cursor.getLong(cursor.getColumnIndex(DbConstants.COLUMN_MOBILE_TX));
+        this.i = cursor.getLong(cursor.getColumnIndex(DbConstants.COLUMN_WIFI_RX));
+        this.j = cursor.getLong(cursor.getColumnIndex(DbConstants.COLUMN_WIFI_TX));
+        this.e = cursor.getInt(cursor.getColumnIndex(DbConstants.COLUMN_LAUNCH_COUNT));
+        this.f = cursor.getLong(cursor.getColumnIndex(DbConstants.COLUMN_USE_TIME));
+        this.m = cursor.getInt(cursor.getColumnIndex(DbConstants.COLUMN_APP_FLAGS));
+    }
+
+    public ContentValues a() {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(DbConstants.COLUMN_LAUNCH_COUNT, Integer.valueOf(this.e));
+        contentValues.put(DbConstants.COLUMN_USE_TIME, Long.valueOf(this.f));
+        contentValues.put(DbConstants.COLUMN_MOBILE_RX, Long.valueOf(this.k));
+        contentValues.put(DbConstants.COLUMN_MOBILE_TX, Long.valueOf(this.l));
+        contentValues.put(DbConstants.COLUMN_WIFI_RX, Long.valueOf(this.i));
+        contentValues.put(DbConstants.COLUMN_WIFI_TX, Long.valueOf(this.j));
+        contentValues.put(DbConstants.COLUMN_PKG_NAME, this.f49a);
+        contentValues.put(DbConstants.COLUMN_APP_NAME, this.b);
+        contentValues.put(DbConstants.COLUMN_UID, Integer.valueOf(this.c));
+        contentValues.put(DbConstants.COLUMN_USE_TIME_TEMP, Long.valueOf(this.o));
+        contentValues.put(DbConstants.COLUMN_LAUNCH_COUNT_TEMP, Integer.valueOf(this.n));
+        contentValues.put(DbConstants.COLUMN_USAGE_FIRST_TIME, Long.valueOf(this.p));
+        contentValues.put(DbConstants.COLUMN_APP_FLAGS, Integer.valueOf(this.m));
+        return contentValues;
+    }
+
+    public void a(ContentValues contentValues) {
+        contentValues.put(DbConstants.COLUMN_LAUNCH_COUNT, Integer.valueOf(this.e));
+        contentValues.put(DbConstants.COLUMN_USE_TIME, Long.valueOf(this.f));
+        contentValues.put(DbConstants.COLUMN_MOBILE_RX, Long.valueOf(this.k));
+        contentValues.put(DbConstants.COLUMN_MOBILE_TX, Long.valueOf(this.l));
+        contentValues.put(DbConstants.COLUMN_WIFI_RX, Long.valueOf(this.i));
+        contentValues.put(DbConstants.COLUMN_WIFI_TX, Long.valueOf(this.j));
+        contentValues.put(DbConstants.COLUMN_PKG_NAME, this.f49a);
+        contentValues.put(DbConstants.COLUMN_APP_NAME, this.b);
+        contentValues.put(DbConstants.COLUMN_UID, Integer.valueOf(this.c));
+        contentValues.put(DbConstants.COLUMN_USE_TIME_TEMP, Long.valueOf(this.o));
+        contentValues.put(DbConstants.COLUMN_LAUNCH_COUNT_TEMP, Integer.valueOf(this.n));
+        contentValues.put(DbConstants.COLUMN_USAGE_FIRST_TIME, Long.valueOf(this.p));
+        contentValues.put(DbConstants.COLUMN_APP_FLAGS, Integer.valueOf(this.m));
+    }
+
+    public ContentValues b() {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(DbConstants.COLUMN_UID, Integer.valueOf(this.c));
+        contentValues.put(DbConstants.COLUMN_PKG_NAME, this.f49a);
+        contentValues.put(DbConstants.COLUMN_USE_TIME_TEMP, Long.valueOf(this.o));
+        contentValues.put(DbConstants.COLUMN_LAUNCH_COUNT_TEMP, Integer.valueOf(this.n));
+        contentValues.put(DbConstants.COLUMN_USAGE_FIRST_TIME, Long.valueOf(this.p));
+        contentValues.put(DbConstants.COLUMN_LAUNCH_COUNT, Integer.valueOf(this.e));
+        contentValues.put(DbConstants.COLUMN_USE_TIME, Long.valueOf(this.f));
+        return contentValues;
+    }
+
+    public String toString() {
+        return "{\"pkgName\":'" + this.f49a + "', \"appName\":'" + this.b + "', \"uid\":" + this.c + ", \"id\":" + this.d + ", \"launchCount\":" + this.e + ", \"useTime\":" + this.f + ", \"wifiRx\":" + this.i + ", \"wifiTx\":" + this.j + ", \"mobileRx\":" + this.k + ", \"mobileTx\":" + this.l + ", \"flags\":" + this.m + ", \"tempLaunchCount\":" + this.n + ", \"tempUseTime\":" + this.o + ", \"firstTime\":" + this.p + '}';
+    }
+}

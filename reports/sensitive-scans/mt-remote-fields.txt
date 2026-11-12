@@ -1,0 +1,375 @@
+package com.richinfo.mthttp.utils;
+
+import android.text.TextUtils;
+import com.android.volley.Request;
+import com.dmyk.android.mt.IDeviceForMt;
+import com.google.gson.Gson;
+import com.hihonor.uikit.hwresources.utils.HwWidgetInstantiator;
+import com.richinfo.mthttp.Constant;
+import com.richinfo.mthttp.MTSDK;
+import com.richinfo.mthttp.entity.FieldConfigEntity;
+import java.lang.reflect.Field;
+import org.json.JSONObject;
+
+/* loaded from: classes.dex */
+public class Funtion {
+    private static final String TAG = "Funtion";
+
+    public static String getRuleData() {
+        String imei1;
+        String fieldConfig = SPUtils.getFieldConfig();
+        if (TextUtils.isEmpty(fieldConfig)) {
+            return "";
+        }
+        try {
+            FieldConfigEntity fieldConfigEntity = (FieldConfigEntity) new Gson().fromJson(fieldConfig, FieldConfigEntity.class);
+            Field[] declaredFields = fieldConfigEntity.getClass().getDeclaredFields();
+            JSONObject jSONObject = new JSONObject();
+            for (Field field : declaredFields) {
+                char c = 1;
+                try {
+                    field.setAccessible(true);
+                    String name = field.getName();
+                    String obj = field.get(fieldConfigEntity).toString();
+                    MTLog.d(TAG, "当前的配置属性 key->" + name + " value->" + obj);
+                    if ("Y".equals(obj)) {
+                        IDeviceForMt deviceManager = MTSDK.getInstance().getDeviceManager();
+                        if (deviceManager == null) {
+                            MTLog.d("ideviceForMt is null");
+                            return "";
+                        }
+                        switch (name.hashCode()) {
+                            case -1600030548:
+                                if (name.equals("resolution")) {
+                                    c = 22;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case -1520360238:
+                                if (name.equals("softwareName")) {
+                                    c = '\n';
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case -1411093378:
+                                if (name.equals("appKey")) {
+                                    c = 14;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case -1394195519:
+                                if (name.equals("bluetoothMac")) {
+                                    c = 15;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case -1192969641:
+                                if (name.equals("phoneNumber")) {
+                                    c = '\r';
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case -947438656:
+                                if (name.equals("networkStatus")) {
+                                    c = 27;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case -794273169:
+                                if (name.equals("appInfo")) {
+                                    c = 29;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case -448284487:
+                                if (name.equals("batteryCapacityCurr")) {
+                                    c = 25;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case -417399155:
+                                if (name.equals("screenSize")) {
+                                    c = 26;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case -206887605:
+                                if (name.equals("sysVersion")) {
+                                    c = '\b';
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case 3675:
+                                if (name.equals("sn")) {
+                                    c = 17;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case 98728:
+                                if (name.equals("cpu")) {
+                                    c = 7;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case 102572:
+                                if (name.equals("gpu")) {
+                                    c = 20;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case 107855:
+                                if (name.equals("mac")) {
+                                    c = 4;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case 112670:
+                                if (name.equals("ram")) {
+                                    c = 6;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case 113104:
+                                if (name.equals("rom")) {
+                                    c = 5;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case 3236474:
+                                if (name.equals("imsi")) {
+                                    c = 2;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case 93908710:
+                                if (name.equals("board")) {
+                                    c = 21;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case 93997959:
+                                if (name.equals("brand")) {
+                                    c = 18;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case 100317289:
+                                if (name.equals("imei1")) {
+                                    c = 0;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case 100317290:
+                                if (name.equals("imei2")) {
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case 100330744:
+                                if (name.equals("imsi2")) {
+                                    c = 3;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case 104069929:
+                                if (name.equals("model")) {
+                                    c = 19;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case 112389764:
+                                if (name.equals("volte")) {
+                                    c = 11;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case 168518982:
+                                if (name.equals("routerMac")) {
+                                    c = 16;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case 637323751:
+                                if (name.equals("batteryCapacity")) {
+                                    c = 24;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case 920795260:
+                                if (name.equals("softwareVer")) {
+                                    c = '\t';
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case 1304010549:
+                                if (name.equals("templateId")) {
+                                    c = 23;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case 1795277269:
+                                if (name.equals("wearingStatus")) {
+                                    c = 28;
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            case 1842452087:
+                                if (name.equals("netType")) {
+                                    c = '\f';
+                                    break;
+                                }
+                                c = 65535;
+                                break;
+                            default:
+                                c = 65535;
+                                break;
+                        }
+                        switch (c) {
+                            case 0:
+                                imei1 = deviceManager.getImei1();
+                                break;
+                            case 1:
+                                imei1 = deviceManager.getImei2();
+                                break;
+                            case 2:
+                                imei1 = deviceManager.getImsi();
+                                break;
+                            case 3:
+                                imei1 = deviceManager.getImsi2();
+                                break;
+                            case 4:
+                                imei1 = deviceManager.getMac();
+                                break;
+                            case 5:
+                                imei1 = deviceManager.getRom();
+                                break;
+                            case Request.Method.TRACE /* 6 */:
+                                imei1 = deviceManager.getRam();
+                                break;
+                            case Request.Method.PATCH /* 7 */:
+                                imei1 = deviceManager.getCpu();
+                                break;
+                            case '\b':
+                                imei1 = deviceManager.getSysVersion();
+                                break;
+                            case '\t':
+                                imei1 = deviceManager.getSoftwareVer();
+                                break;
+                            case '\n':
+                                imei1 = deviceManager.getSoftwareName();
+                                break;
+                            case 11:
+                                imei1 = deviceManager.getVolte();
+                                break;
+                            case '\f':
+                                imei1 = deviceManager.getNetType();
+                                break;
+                            case '\r':
+                                imei1 = deviceManager.getPhoneNumber();
+                                break;
+                            case 14:
+                                imei1 = deviceManager.getAppKey();
+                                break;
+                            case HwWidgetInstantiator.TYPE_MASK /* 15 */:
+                                imei1 = deviceManager.getBluetoothMac();
+                                break;
+                            case 16:
+                                imei1 = deviceManager.getRouterMac();
+                                break;
+                            case 17:
+                                imei1 = deviceManager.getSn();
+                                break;
+                            case 18:
+                                imei1 = deviceManager.getBrand();
+                                break;
+                            case 19:
+                                imei1 = deviceManager.getModel();
+                                break;
+                            case 20:
+                                imei1 = deviceManager.getGpu();
+                                break;
+                            case 21:
+                                imei1 = deviceManager.getBoard();
+                                break;
+                            case 22:
+                                imei1 = deviceManager.getResolution();
+                                break;
+                            case 23:
+                                imei1 = deviceManager.getTemplateId();
+                                break;
+                            case 24:
+                                imei1 = deviceManager.getBatteryCapacity();
+                                break;
+                            case 25:
+                                imei1 = deviceManager.getBatteryCapacityCurr();
+                                break;
+                            case 26:
+                                imei1 = deviceManager.getScreenSize();
+                                break;
+                            case 27:
+                                imei1 = deviceManager.getNetworkStatus();
+                                break;
+                            case 28:
+                                imei1 = deviceManager.getWearingStatus();
+                                break;
+                            case 29:
+                                imei1 = deviceManager.getAppInfo();
+                                if (!TextUtils.isEmpty(imei1) && imei1.length() > 4000) {
+                                    imei1 = imei1.substring(0, 4000);
+                                    break;
+                                }
+                                break;
+                            default:
+                                MTLog.e("未知的 key->" + name);
+                                imei1 = "";
+                                break;
+                        }
+                        MTLog.d("上报数据 key->" + name + " value->" + imei1);
+                        jSONObject.put(name, AesUtil.encrypt(Constant.AES_KEY, imei1));
+                    } else {
+                        continue;
+                    }
+                } catch (Exception e) {
+                    if (!"this$0".equals(field.getName())) {
+                        MTLog.e(TAG, "属性缺失->" + field.getName());
+                    }
+                    e.printStackTrace();
+                }
+            }
+            String jSONObject2 = jSONObject.toString();
+            MTLog.d(TAG, "最终上报数据-->" + jSONObject2);
+            return jSONObject2;
+        } catch (Exception e2) {
+            e2.printStackTrace();
+            return "";
+        }
+    }
+}

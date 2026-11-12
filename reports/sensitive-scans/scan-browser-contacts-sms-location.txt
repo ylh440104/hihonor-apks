@@ -1,0 +1,10 @@
+===== A. browser/bookmark/history =====
+===== A2. WebView usage =====
+===== B. contacts =====
+===== C. sms/mms =====
+===== D. call log =====
+===== E. clipboard =====
+===== F. location =====
+./com/dmyk/android/telephony/DmykAbsTelephonyManager.java:7:import android.location.LocationManager;
+./com/dmyk/android/telephony/DmykAbsTelephonyManager.java:493:        return ((LocationManager) this.mContext.getSystemService(LocationManager.class)).isProviderEnabled("gps");
+===== G. media/camera/screen =====

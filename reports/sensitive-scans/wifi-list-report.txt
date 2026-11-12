@@ -1,0 +1,36 @@
+        LogUtils.info(PublicConstance.LOG_TAG_WIFI, "Wifi列表上报校验");
+        if (!BusinessUtils.switchCheck(SPUtils.getWifiListReportSwitch(this.b))) {
+            str = PrivateConstance.LOG_MSG_WHITELIST;
+        } else {
+            if (BusinessUtils.isWifi(this.b)) {
+                return true;
+            }
+            str = PrivateConstance.LOG_MSG_NOT_WIFI;
+        }
+        LogUtils.reportW(PublicConstance.LOG_TAG_WIFI, str);
+        return false;
+    }
+
+    public synchronized void d() {
+        JSONArray queryWifiList = DbManager.getInstance(this.b).queryWifiList();
+        if (queryWifiList.length() == 0) {
+            LogUtils.reportW(PublicConstance.LOG_TAG_WIFI, PrivateConstance.LOG_MSG_NO_NEW);
+            return;
+        }
+        JSONObject jSONObject = new JSONObject();
+        try {
+            jSONObject.put("sdkVersion", DMConfig.SDK_VERSION);
+            jSONObject.put("imei1", DMDeviceInfoCollection.imei1(this.b));
+            jSONObject.put("imei2", DMDeviceInfoCollection.imei2(this.b));
+            jSONObject.put("wifiListArray", queryWifiList);
+            jSONObject.put("sendTime", System.currentTimeMillis());
+        } catch (Exception e) {
+            LogUtils.err(PublicConstance.LOG_TAG_WIFI, e.getMessage());
+        }
+        String jSONObject2 = jSONObject.toString();
+        String str = DMSDK.getBaseAcceptUrl(this.b) + UrlConstant.URL_WIFI_LIST_REPORT + BusinessUtils.getUrlParamsV1(this.b);
+        LogUtils.debug(PublicConstance.LOG_TAG_WIFI, "url=" + str);
+        LogUtils.debug(PublicConstance.LOG_TAG_WIFI, "msg=" + jSONObject2);
+        VolleyUtil.getQueue(this.b).add(EncryptJsonRequest.getEncryptJsonRequest(1, str, jSONObject2, new P(this, str)));
+    }
+}

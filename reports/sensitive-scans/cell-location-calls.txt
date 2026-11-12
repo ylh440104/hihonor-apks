@@ -1,0 +1,20 @@
+com/dmyk/android/telephony/DmykAbsTelephonyManager.java:15:import android.telephony.CellLocation;
+com/dmyk/android/telephony/DmykAbsTelephonyManager.java:18:import android.telephony.cdma.CdmaCellLocation;
+com/dmyk/android/telephony/DmykAbsTelephonyManager.java:19:import android.telephony.gsm.GsmCellLocation;
+com/dmyk/android/telephony/DmykAbsTelephonyManager.java:364:            CellLocation cellLocation = getCellLocation(i);
+com/dmyk/android/telephony/DmykAbsTelephonyManager.java:368:            if (cellLocation instanceof GsmCellLocation) {
+com/dmyk/android/telephony/DmykAbsTelephonyManager.java:369:                return ((GsmCellLocation) cellLocation).getCid();
+com/dmyk/android/telephony/DmykAbsTelephonyManager.java:371:            if (cellLocation instanceof CdmaCellLocation) {
+com/dmyk/android/telephony/DmykAbsTelephonyManager.java:372:                return ((CdmaCellLocation) cellLocation).getSystemId();
+com/dmyk/android/telephony/DmykAbsTelephonyManager.java:375:            CellLocation cellLocation2 = getCellLocation(i);
+com/dmyk/android/telephony/DmykAbsTelephonyManager.java:376:            if (cellLocation2 != null && (cellLocation2 instanceof CdmaCellLocation)) {
+com/dmyk/android/telephony/DmykAbsTelephonyManager.java:377:                return ((CdmaCellLocation) cellLocation2).getSystemId();
+com/dmyk/android/telephony/DmykAbsTelephonyManager.java:407:            CellLocation cellLocation = getCellLocation(i);
+com/dmyk/android/telephony/DmykAbsTelephonyManager.java:411:            if (cellLocation instanceof GsmCellLocation) {
+com/dmyk/android/telephony/DmykAbsTelephonyManager.java:412:                return ((GsmCellLocation) cellLocation).getLac();
+com/dmyk/android/telephony/DmykAbsTelephonyManager.java:414:            if (cellLocation instanceof CdmaCellLocation) {
+com/dmyk/android/telephony/DmykAbsTelephonyManager.java:415:                return ((CdmaCellLocation) cellLocation).getNetworkId();
+com/dmyk/android/telephony/DmykAbsTelephonyManager.java:418:            CellLocation cellLocation2 = getCellLocation(i);
+com/dmyk/android/telephony/DmykAbsTelephonyManager.java:419:            if (cellLocation2 != null && (cellLocation2 instanceof CdmaCellLocation)) {
+com/dmyk/android/telephony/DmykAbsTelephonyManager.java:420:                return ((CdmaCellLocation) cellLocation2).getNetworkId();
+com/dmyk/android/telephony/DmykAbsTelephonyManager.java:610:    private static CellLocation getCellLocation(int i) {

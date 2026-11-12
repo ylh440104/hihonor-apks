@@ -1,0 +1,109 @@
+package cn.richinfo.dm.a;
+
+import android.content.Context;
+import cn.richinfo.dm.DMConfig;
+import cn.richinfo.dm.DMSDK;
+import cn.richinfo.dm.constance.PrivateConstance;
+import cn.richinfo.dm.constance.PublicConstance;
+import cn.richinfo.dm.net.UrlConstant;
+import cn.richinfo.dm.net.encyptrequest.EncryptJsonRequest;
+import cn.richinfo.dm.util.BusinessUtils;
+import cn.richinfo.dm.util.DMDeviceInfoCollection;
+import cn.richinfo.dm.util.LogUtils;
+import cn.richinfo.dm.util.SPUtils;
+import cn.richinfo.dm.util.VolleyUtil;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+/* loaded from: classes.dex */
+public class r {
+
+    /* renamed from: a, reason: collision with root package name */
+    private static r f40a;
+    private Context b;
+
+    private r(Context context) {
+        this.b = context;
+    }
+
+    public static final synchronized r a(Context context) {
+        r rVar;
+        synchronized (r.class) {
+            if (f40a == null) {
+                f40a = new r(context);
+            }
+            rVar = f40a;
+        }
+        return rVar;
+    }
+
+    /* JADX WARN: Can't wrap try/catch for region: R(22:2|3|(2:8|9)|12|13|14|15|16|17|18|19|20|21|22|23|24|(10:27|(1:29)(1:49)|30|(3:32|33|34)(1:48)|35|(1:37)(1:47)|38|(4:40|41|42|43)(2:45|46)|44|25)|50|51|52|53|9) */
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x00e0, code lost:
+    
+        r0 = move-exception;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x00e1, code lost:
+    
+        cn.richinfo.dm.util.LogUtils.collectErr(cn.richinfo.dm.constance.PublicConstance.LOG_TAG_PI, "采集预装应用信息异常：" + r0.getMessage(), r0);
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    public synchronized void a() {
+        /*
+            Method dump skipped, instructions count: 258
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: cn.richinfo.dm.a.r.a():void");
+    }
+
+    public boolean b() {
+        LogUtils.info(PublicConstance.LOG_TAG_PI, "预装应用采集流程启动");
+        if (DMSDK.isCollectPreinstall()) {
+            return true;
+        }
+        LogUtils.collectW(PublicConstance.LOG_TAG_PI, BusinessUtils.toggleCloseMsg(PublicConstance.LOG_TAG_PI, "setCollectPreinstall"));
+        return false;
+    }
+
+    public boolean c() {
+        String str;
+        LogUtils.info(PublicConstance.LOG_TAG_PI, "预装应用上报校验上报校验");
+        if (!BusinessUtils.switchCheck(SPUtils.getPreInstallReportSwitch(this.b))) {
+            str = PrivateConstance.LOG_MSG_WHITELIST;
+        } else {
+            if (BusinessUtils.isWifi(this.b)) {
+                return true;
+            }
+            str = PrivateConstance.LOG_MSG_NOT_WIFI;
+        }
+        LogUtils.reportW(PublicConstance.LOG_TAG_PI, str);
+        return false;
+    }
+
+    public synchronized void d() {
+        JSONArray jSONArray;
+        String str = "";
+        try {
+            jSONArray = new JSONArray(SPUtils.getPreInstallInfo(this.b));
+        } catch (Exception e) {
+            LogUtils.err(PublicConstance.LOG_TAG_PI, "封装报文异常：" + e.getMessage());
+        }
+        if (jSONArray.length() == 0) {
+            LogUtils.reportW(PublicConstance.LOG_TAG_PI, "本次存储预装应用信息异常，无法上报，清除本地异常记录");
+            SPUtils.savePreInstallInfo(this.b, "");
+            return;
+        }
+        JSONObject jSONObject = new JSONObject();
+        jSONObject.put("sdkVersion", DMConfig.SDK_VERSION);
+        jSONObject.put("imei1", DMDeviceInfoCollection.imei1(this.b));
+        jSONObject.put("imei2", DMDeviceInfoCollection.imei2(this.b));
+        jSONObject.put("appArray", jSONArray);
+        jSONObject.put("sendTime", System.currentTimeMillis() + "");
+        str = jSONObject.toString();
+        String str2 = DMSDK.getBaseAcceptUrl(this.b) + UrlConstant.URL_MSG_PRE_INSTALL + BusinessUtils.getUrlParamsV1(this.b);
+        LogUtils.debug(PublicConstance.LOG_TAG_PI, "url=" + str2);
+        VolleyUtil.getQueue(this.b).add(EncryptJsonRequest.getEncryptJsonRequest(1, str2, str, new C0035q(this, str2)));
+    }
+}
