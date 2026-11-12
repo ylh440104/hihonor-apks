@@ -1,0 +1,38 @@
+-- cn/richinfo/dm/a/C0020b.java
+UrlConstant.URL_APP_MSG_REPORT
+-- cn/richinfo/dm/a/C0034p.java
+UrlConstant.URL_NETWORK_MSG_REPORT
+-- cn/richinfo/dm/a/K.java
+UrlConstant.URL_TIMEREALATEDTRAFFICE_MSG_REPORT
+-- cn/richinfo/dm/a/C0024f.java
+UrlConstant.URL_BLUETOOTH_MSG_REPORT
+-- cn/richinfo/dm/a/H.java
+UrlConstant.URL_IP_GET
+-- cn/richinfo/dm/a/C0022d.java
+UrlConstant.URL_BATTERY_MSG_REPORT
+-- cn/richinfo/dm/a/Q.java
+UrlConstant.URL_WIFI_LIST_REPORT
+-- cn/richinfo/dm/a/w.java
+UrlConstant.URL_ROAMING_MSG_REPORT
+-- cn/richinfo/dm/a/r.java
+UrlConstant.URL_MSG_PRE_INSTALL
+-- cn/richinfo/dm/a/C0032n.java
+UrlConstant.URL_LOG_DIAGNOSIS_REPORT
+-- cn/richinfo/dm/a/D.java
+UrlConstant.URL_QUERY_SNAPSHOT_CONFIG
+UrlConstant.URL_SNAPSHOT_MSG_REPORT_DEBUG
+UrlConstant.URL_SNAPSHOT_MSG_REPORT_RELEASE
+-- cn/richinfo/dm/a/u.java
+UrlConstant.URL_REGISTER_MSG_REPORT
+-- cn/richinfo/dm/a/C0029k.java
+UrlConstant.URL_HEARTBEAT_MSG_REPORT
+-- cn/richinfo/dm/a/C0026h.java
+UrlConstant.URL_CONFIGLOG_MSG_REPORT
+-- cn/richinfo/dm/a/O.java
+UrlConstant.URL_QUERY_SDK_UPDATE
+-- cn/richinfo/dm/a/C0030l.java
+UrlConstant.URL_LOG_FILE_REPORT
+-- cn/richinfo/dm/net/UrlConstant.java
+-- cn/richinfo/dm/DMSDK.java
+UrlConstant.URL_ACCEPT
+UrlConstant.URL_CONFIG
