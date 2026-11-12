@@ -1,0 +1,5 @@
+out/
+*.zip
+*.jar
+jadx/
+apktool.jar

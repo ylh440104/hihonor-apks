@@ -1,0 +1,88 @@
+name: decompile
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'apks/**'
+      - '.github/workflows/**'
+
+permissions:
+  contents: read
+
+jobs:
+  decompile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Install unpack tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unzip zip >/dev/null
+          curl -sSL -o jadx.zip https://github.com/skylot/jadx/releases/download/v1.5.1/jadx-1.5.1.zip
+          unzip -q jadx.zip -d jadx
+          chmod +x jadx/bin/jadx
+          echo "$PWD/jadx/bin" >> $GITHUB_PATH
+          curl -sSL -o apktool.jar https://github.com/iBotPeaches/Apktool/releases/download/v2.9.3/apktool_2.9.3.jar
+          printf '#!/bin/sh\nexec java -jar %s/apktool.jar "$@"\n' "$PWD" > apktool
+          chmod +x apktool
+          echo "$PWD" >> $GITHUB_PATH
+
+      - name: Show environment
+        run: |
+          java -version
+          jadx --version
+          apktool --version || true
+
+      - name: jadx full decompile
+        run: |
+          mkdir -p out/jadx
+          for f in apks/*.apk; do
+            b=$(basename "$f" .apk)
+            echo "== jadx $b =="
+            jadx -d "out/jadx/$b" --no-res -j 2 "$f" || echo "jadx failed: $b"
+          done
+
+      - name: raw unzip
+        run: |
+          mkdir -p out/unpacked
+          for f in apks/*.apk; do
+            b=$(basename "$f" .apk)
+            mkdir -p "out/unpacked/$b"
+            unzip -q -o "$f" -d "out/unpacked/$b" || true
+          done
+
+      - name: apktool decode
+        run: |
+          mkdir -p out/apktool
+          for f in apks/*.apk; do
+            b=$(basename "$f" .apk)
+            echo "== apktool $b =="
+            apktool d -f -o "out/apktool/$b" "$f" || echo "apktool failed: $b"
+          done
+
+      - name: Report
+        run: |
+          du -sh out/* 2>/dev/null || true
+          find out -maxdepth 2 -type d | head -50
+
+      - name: Package
+        run: |
+          zip -qr decompile-out.zip out
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: decompile-out
+          path: decompile-out.zip
+          compression-level: 0
+          retention-days: 14
