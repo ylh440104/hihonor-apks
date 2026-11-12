@@ -1,0 +1,113 @@
+======================================================================
+APP: AutoRegSms_15.1.0.100
+  package=com.hihonor.android.AutoRegSms | versionName=None | versionCode=None | minSdk=None | targetSdk=None
+  permissions (6):
+    - android.permission.MODIFY_PHONE_STATE
+    - android.permission.READ_SMS
+    - android.permission.RECEIVE_BOOT_COMPLETED
+    - android.permission.RECEIVE_SMS
+    - android.permission.SATELLITE_COMMUNICATION
+    - android.permission.SEND_SMS
+  activitys: 0 (exported 0)
+  activity-aliass: 0 (exported 0)
+  services: 3 (exported 0)
+  receivers: 1 (exported 1)
+    * com.hihonor.android.AutoRegSms.AutoRegReceiver
+  providers: 0 (exported 0)
+======================================================================
+APP: com.hihonor.hiviewpush.common.HiViewPushApplication_15.0.0.034
+  package=com.hihonor.hiviewpush | versionName=None | versionCode=None | minSdk=None | targetSdk=None
+  permissions (0):
+  activitys: 0 (exported 0)
+  activity-aliass: 0 (exported 0)
+  services: 2 (exported 1)
+    * com.hihonor.hiviewpush.PushManagerService
+  receivers: 1 (exported 1)
+    * com.hihonor.push.sdk.PushReceiver
+  providers: 1 (exported 0)
+  defines permissions:
+    + com.hihonor.hiviewpush.hihonor.permission.PROCESS_PUSH_MSG | signatureOrSystem
+======================================================================
+APP: hiview_15.0.0.036
+  package=com.hihonor.hiview | versionName=None | versionCode=None | minSdk=None | targetSdk=None
+  permissions (52):
+    - android.permission.ACCESS_BACKGROUND_LOCATION
+    - android.permission.ACCESS_COARSE_LOCATION
+    - android.permission.ACCESS_FINE_LOCATION
+    - android.permission.ACCESS_NETWORK_STATE
+    - android.permission.ACCESS_WIFI_STATE
+    - android.permission.BLUETOOTH
+    - android.permission.BLUETOOTH_ADMIN
+    - android.permission.BLUETOOTH_CONNECT
+    - android.permission.DELETE_PACKAGES
+    - android.permission.MANAGE_EXTERNAL_STORAGE
+    - android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+    - android.permission.PACKAGE_USAGE_STATS
+    - android.permission.READ_PHONE_STATE
+    - android.permission.READ_PRIVILEGED_PHONE_STATE
+    - android.permission.READ_SECURE_SETTINGS
+    - android.permission.READ_SETTINGS
+    - android.permission.REBOOT
+    - android.permission.RECEIVE_BOOT_COMPLETED
+    - android.permission.SHUTDOWN
+    - android.permission.SYSTEM_ALERT_WINDOW
+    - android.permission.SecurityService
+    - android.permission.USES_BETACLUB
+    - com.android.permission.GET_INSTALLED_APPS
+    - com.android.permission.QUERY_ALL_PACKAGE
+    - com.android.providers.media.permission.SCAN_FOLDER
+    - com.hihonor.android.bluetooth.permission.ACCESS_BT_CHR
+    - com.hihonor.android.permission.ANTITHEFT
+    - com.hihonor.android.permission.GET_CHR_DATA
+    - com.hihonor.android.permission.RECEIVE_CHR_BROADCAST
+    - com.hihonor.android.powerkit.permission.BIND
+    - com.hihonor.android.powerkit.permission.STATGCHG
+    - com.hihonor.assistant.permission.SWITCH_STATE
+    - com.hihonor.assistant.permission.SWITCH_STATE_WRITE
+    - com.hihonor.awareness.logfile.READ_LOG_PERMISSION
+    - com.hihonor.batteryservice.permission.WIRELESS_TX_STATUS_CHANGE
+    - com.hihonor.contacts.permission.LOG_COLLECT
+    - com.hihonor.devicemanager.permission.BIND_CLOUD_SERVICE
+    - com.hihonor.fileprotect.sfpservice.permissions.GET_SCREEN_LOCK_STATE
+    - com.hihonor.hiviewtunnel.permission.SHOW_LOCK_VIEW
+    - com.hihonor.iconnect.permission.RECEIVE_BROADCAST
+    - com.hihonor.id.permission.BIND_KIT_ASSISTANT_SERVICE
+    - com.hihonor.magichome.betaclub.READ_LOG
+    - com.hihonor.notepad.logfile.READ_LOG_PERMISSION
+    - com.hihonor.permission.HWSHARE_SET_WIFI_MODE
+    - com.hihonor.permission.notification.fixed
+    - com.hihonor.powergenie.receiverPermission
+    - com.hihonor.wifiprobqeservice.action.ROUTER_MODEL_RECOGNITION_RESULT
+    - com.qualcomm.permission.IZAT
+    - hihonor.android.permission.HW_SIGNATURE_OR_SYSTEM
+    - hihonor.permission.RECEIVE_CLOUD_OTA_UPDATA
+    - hihonor.permission.RECEIVE_WIFI_PRO_STATE
+    - hihonor.permission.SMART_NOTIFY_FAULT
+  activitys: 0 (exported 0)
+  activity-aliass: 0 (exported 0)
+  services: 9 (exported 4)
+    * com.hihonor.lcagent.service.LogCollectService
+    * com.hihonor.lcagent.service.MulDevLinkageService
+    * com.hihonor.ncdft.NcDftService
+    * com.hihonor.mcs.system.diagnosis.service.DiagKitService
+  receivers: 7 (exported 7)
+    * com.hihonor.dubai.DubaiCfgCotaUpdateReceiver
+    * com.hihonor.dubai.HwDubaiReceiver
+    * com.hihonor.lcagent.service.receiver.HiViewSysReceiver
+    * com.hihonor.lcagent.service.receiver.LogCollectReceiver
+    * com.hihonor.configupdate.CloudConfigUpdateReceiver
+    * com.hihonor.mcs.system.diagnosis.service.receiver.BootReceiver
+    * com.hihonor.mcs.system.diagnosis.service.receiver.AllowListUpdatedReceiver
+  providers: 8 (exported 5)
+    * com.hihonor.dubai.DubaiCfgCotaUpdateProvider
+    * com.hihonor.lcagent.common.dboperate.LogServiceContentProvider
+    * com.hihonor.lcagent.common.dboperate.EventInfoFlowContentProvider
+    * com.hihonor.lcagent.common.dboperate.UeInfoContentProvider
+    * com.hihonor.configupdate.CloudConfigUpdateProvider
+  defines permissions:
+    + com.hihonor.permission.USES_HW_LOG_SERVICE | signatureOrSystem
+    + com.hihonor.hiview.permission.USE_HW_LOG_SERVICE | signatureOrSystem
+    + com.hihonor.android.permission.ACCESS_NCDFT_BIND_SERVICE | signatureOrSystem
+    + com.hihonor.application.permission.logCollect | signatureOrSystem
+    + com.hihonor.hiview.permission.PROCESS_PUSH_MSG | signatureOrSystem
+    + com.honor.ncdft.bt.chr.ChrEvent | signature

@@ -1,0 +1,9 @@
+      1 func=tsdk:checkupdate
+      1 func=tsdk:configlog
+      1 func=tsdk:flowcollect
+      2 func=tsdk:photoReg
+      1 func=tsdk:postBluetoothInfo
+      1 func=tsdk:postapplylog
+      1 func=tsdk:posthblog
+      1 func=tsdk:postreglog
+      1 func=tsdk:termimalfullconfig

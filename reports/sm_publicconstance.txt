@@ -1,0 +1,70 @@
+package cn.richinfo.dm.constance;
+
+/* loaded from: classes.dex */
+public class PublicConstance {
+    public static final String ACTION_VOLTE_STATE_CHANGE = "com.dmyk.android.telephony.action.VOLTE_STATE_CHANGE";
+    public static final String BASE_URL_DEBUG = "https://b.fxltsbl.com";
+    public static final String BASE_URL_RELEASE = "https://a.fxltsbl.com";
+
+    @Deprecated
+    public static final String DM_ACTION_APP_COLLECT = "cn.richinfo.dmyk.action.APP_COLLECT";
+    public static final String DM_ACTION_APP_INFO = "cn.richinfo.dmyk.action.APPINFO";
+    public static final String DM_ACTION_APP_INFO_RETRY = "cn.richinfo.dmyk.action.APPINFO_RETRY";
+    public static final String DM_ACTION_BATTERY_CHARGE_STATE_CHANGE = "android.dmyk.action.BATTERY_CHARGE_STATE_CHANGE";
+    public static final String DM_ACTION_BLUETOOTH_CONNECTIVITY_CHANGE = "android.dmyk.action.BLUETOOTH_CONNECTIVITY_CHANGE";
+    public static final String DM_ACTION_DM_CONNECTIVITY_CHANGE = "android.dmyk.net.conn.CONNECTIVITY_CHANGE";
+    public static final String DM_ACTION_DM_RESPONSE = "cn.richinfo.dmyk.action.DM_RESPONSE";
+    public static final String DM_ACTION_HEARTBEAT = "cn.richinfo.dmyk.action.HEARTBEAT";
+    public static final String DM_ACTION_HEARTBEAT_RETRY = "cn.richinfo.dmyk.action.HEARTBEAT_RETRY";
+    public static final String DM_ACTION_NETWORK_COLLECT = "android.dmyk.action.ACTION_NETWORK_COLLECT";
+    public static final String DM_ACTION_REGISTER_RETRY = "cn.richinfo.dmyk.action.REGISITER_RETRY";
+    public static final String DM_ACTION_SIM_STATE_CHANGED = "com.dmyk.android.telephony.action.SIM_STATE_CHANGED";
+    public static final String DM_ACTION_SNAPSHOT_RETRY = "cn.richinfo.dmyk.action.SNAPSHOT_RETRY";
+    public static final String DM_ACTION_THIRD_REQUEST = "cn.richinfo.dmyk.action.THIRD_REQUEST";
+    public static final String DM_ACTION_THIRD_REQUEST_DYNAMIC = "cn.richinfo.dmyk.action.THIRD_REQUEST_DYNAMIC";
+    public static final String EXTRA_BATTERY_CHARGE_STATE = "com.dmyk.android.telephony.EXTRA_BATTERY_CHARGE_STATE";
+    public static final String EXTRA_SIM_PHONEID = "com.dmyk.android.telephony.extra.SIM_PHONEID";
+    public static final String EXTRA_VOLTE_STATE = "com.dmyk.android.telephony.extra.VOLTE_STATE";
+    public static final int FUNC_SUPPORT = 1;
+    public static final int FUNC_UNKNOWN = -1;
+    public static final int FUNC_UN_SUPPORT = 0;
+    public static final String KEY_MSG = "msg";
+    public static final String KEY_RESULT = "result";
+    public static final String KEY_STATUS = "status";
+    public static final String KEY_TAG = "tag";
+    public static final String LOG_TAG_APP = "应用采集";
+    public static final String LOG_TAG_BC = "充电采集";
+    public static final String LOG_TAG_BS = "控制功能";
+    public static final String LOG_TAG_BT = "蓝牙采集";
+    public static final String LOG_TAG_CFG = "配置查询";
+    public static final String LOG_TAG_FILE = "文件上传";
+    public static final String LOG_TAG_HB = "心跳采集";
+    public static final String LOG_TAG_IR = "国际漫游";
+    public static final String LOG_TAG_LOG = "异常诊断";
+    public static final String LOG_TAG_NET = "网络采集";
+    public static final String LOG_TAG_PI = "预装应用";
+    public static final String LOG_TAG_REG = "自注册";
+    public static final String LOG_TAG_SET = "SET_SDK";
+    public static final String LOG_TAG_SP = "拍照采集";
+    public static final String LOG_TAG_TT = "流量采集";
+    public static final String LOG_TAG_UP = "动态更新";
+    public static final String LOG_TAG_WIFI = "Wifi采集";
+    public static final int RESULT_UNKNOWN_INT = -1;
+    public static final long RESULT_UNKNOWN_LONG = -1;
+    public static final String RESULT_UNKNOWN_STR = "unknown";
+    public static final int SWITCH_STATE_CLOSE = 0;
+    public static final int SWITCH_STATE_NO_SIM = -1;
+    public static final int SWITCH_STATE_OPEN = 1;
+    public static final int SWITCH_STATE_UNKNOWN = -3;
+    public static final int SWITCH_STATE_UN_SUPPORT = -1;
+    public static final String TYPE_SWITCH_5G = "5G";
+    public static final String TYPE_SWITCH_5G_MESSAGE = "5G_MSG";
+    public static final String TYPE_SWITCH_VOLTE = "VOLTE";
+    public static final String TYPE_SWITCH_VONR = "VONR";
+    public static final int VALUE_REL_BEGIN = 0;
+    public static final int VALUE_REL_FAIL = -1;
+    public static final int VALUE_REL_SUCCESS = 1;
+    public static final String VALUE_STATUS_COLLECT = "collect";
+    public static final String VALUE_STATUS_REPORT = "report";
+    public static final String VALUE_STATUS_START = "start";
+}

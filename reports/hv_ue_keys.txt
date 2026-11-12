@@ -1,0 +1,29 @@
+4:public class UeHiEventKeys {
+5:    public static final int ID_INFO_APPS_INSTALLED = 990000001;
+6:    public static final int ID_INFO_APP_ACTIVE = 990000032;
+7:    public static final int ID_INFO_APP_INSTALL = 990000002;
+8:    public static final int ID_INFO_APP_UNINSTALL = 990000003;
+9:    public static final int ID_INFO_APP_UPDATE = 990000004;
+10:    public static final int ID_INFO_APP_USAGE = 990000005;
+11:    public static final int ID_INFO_APP_USAGE_HOUR = 990000016;
+12:    public static final int ID_INFO_AVAILABLE_MEM = 990000028;
+13:    public static final int ID_INFO_BRIGHTNESS = 990000010;
+14:    public static final int ID_INFO_EXT_SDCARD = 990000030;
+15:    public static final int ID_INFO_INPUTMETHOD = 990000012;
+16:    public static final int ID_INFO_LANGUAGE = 990000011;
+17:    public static final int ID_INFO_NETWORK_NAME = 990000023;
+18:    public static final int ID_INFO_NET_NAME = 990000024;
+19:    public static final int ID_INFO_OPEN_PHONE = 990000018;
+20:    public static final int ID_INFO_PERFORMANCE = 990000027;
+21:    public static final int ID_INFO_POWER_CONNECTED = 990000020;
+22:    public static final int ID_INFO_POWER_DISCONNECTED = 990000021;
+23:    public static final int ID_INFO_SD_FREE_SIZE = 990000008;
+24:    public static final int ID_INFO_SD_TOTAL_SIZE = 990000007;
+25:    public static final int ID_INFO_SENSOR = 990000031;
+26:    public static final int ID_INFO_SHUTDOWN_PHONE = 990000019;
+27:    public static final int ID_INFO_SYSTEM_FONT = 990000009;
+28:    public static final int ID_INFO_USER_PLAN_SWITCH = 990000025;
+29:    public static final int ID_INFO_USER_ROOT = 990000026;
+30:    public static final int ID_INFO_USING_DURATIONS = 990000029;
+31:    public static final int ID_INFO_WIFI_STATE = 990000013;
+34:    private UeHiEventKeys() {

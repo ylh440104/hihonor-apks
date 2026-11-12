@@ -1,0 +1,25 @@
+package cn.richinfo.dm.net;
+
+/* loaded from: classes.dex */
+public class UrlConstant {
+    public static final String URL_ACCEPT = "/accept";
+    public static final String URL_APP_MSG_REPORT = "/sdkService?func=tsdk:postapplylog";
+    public static final String URL_BATTERY_MSG_REPORT = "/batteryCharging?";
+    public static final String URL_BLUETOOTH_MSG_REPORT = "/bluetooth?func=tsdk:postBluetoothInfo";
+    public static final String URL_CONFIG = "/TerminalConfigService/terminalConf?func=tsdk:termimalfullconfig";
+    public static final String URL_CONFIGLOG_MSG_REPORT = "/sdkService?func=tsdk:configlog";
+    public static final String URL_HEARTBEAT_MSG_REPORT = "/sdkService?func=tsdk:posthblog";
+    public static final String URL_IP_GET = "https://a.fxltsbl.com/getIpAddr";
+    public static final String URL_LOG_DIAGNOSIS_REPORT = "/errorDiagnosis?";
+    public static final String URL_LOG_FILE_REPORT = "/logReport?";
+    public static final String URL_MSG_PRE_INSTALL = "/preInstalledApp?";
+    public static final String URL_NETWORK_MSG_REPORT = "/network?";
+    public static final String URL_QUERY_SDK_UPDATE = "TerminalConfigService/terminalConf?func=tsdk:checkupdate";
+    public static final String URL_QUERY_SNAPSHOT_CONFIG = "TerminalConfigService/auth?tsdk:sdkAuth";
+    public static final String URL_REGISTER_MSG_REPORT = "/sdkService?func=tsdk:postreglog";
+    public static final String URL_ROAMING_MSG_REPORT = "/internationalRoaming?";
+    public static final String URL_SNAPSHOT_MSG_REPORT_DEBUG = "sdkphoto/accept?func=tsdk:photoReg";
+    public static final String URL_SNAPSHOT_MSG_REPORT_RELEASE = "https://auc.fxltsbl.com/AuthCenter/datareport?func=tsdk:photoReg";
+    public static final String URL_TIMEREALATEDTRAFFICE_MSG_REPORT = "/flowCollectService?func=tsdk:flowcollect";
+    public static final String URL_WIFI_LIST_REPORT = "/wifiInfo?";
+}

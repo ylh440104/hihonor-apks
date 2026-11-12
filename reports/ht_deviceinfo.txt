@@ -1,0 +1,40 @@
+14:    public static String getSn() {
+package com.hihonor.idaptunnel.data;
+
+import android.os.Build;
+import com.hihonor.idaptunnel.common.Logger;
+
+/* loaded from: classes.dex */
+public class DeviceInfo {
+    private static final int ILLEGAL_INDEX = -1;
+    private static final String TAG = "DeviceInfo";
+
+    private DeviceInfo() {
+    }
+
+    public static String getSn() {
+        return Build.getSerial();
+    }
+
+    public static String getAndroidVersion() {
+        return RefSystemProperties.getAndroidVersion();
+    }
+
+    public static String getMagicVersion() {
+        return RefSystemProperties.getMagicVersion();
+    }
+
+    public static String getModel() {
+        return RefSystemProperties.getModel();
+    }
+
+    public static String getVersion() {
+        String replace = RefSystemProperties.getVersionString().replace("_", "-");
+        int indexOf = replace.indexOf("V100");
+        if (indexOf == -1) {
+            Logger.debug(TAG, "newVersion ", replace);
+            return replace;
+        }
+        return replace.substring(indexOf).trim();
+    }
+}

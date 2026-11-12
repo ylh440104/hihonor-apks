@@ -1,0 +1,8 @@
+com/hihonor/framework/common/PowerUtils.java
+com/hihonor/dubai/HwDubaiService.java
+com/hihonor/lcagent/service/operates/pack/metricpackager/generator/GeneratePackageInfoUtil.java
+com/hihonor/lcagent/service/process/main/timelytask/action/CollectPackageUsageTimelyAction.java
+com/hihonor/lcagent/service/process/main/uecollector/CollectionImplements.java
+com/hihonor/lcagent/service/process/main/uecollector/UeCollectAction.java
+com/hihonor/lcagent/service/process/main/uecollector/UeCollector.java
+com/hihonor/lcagent/service/process/remotedebug/RemoteDebugOperate.java

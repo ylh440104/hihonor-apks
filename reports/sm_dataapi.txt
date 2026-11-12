@@ -1,0 +1,77 @@
+SystemMessage_15.0.0.011/sources/org/a/b/a/f/c.java:275:        String encrypt2 = AesCoder.getInstance().encrypt2(SPUtil.getImei(MTSdk.getApplication()) + HelpFormatter.DEFAULT_OPT_PREFIX + SPUtil.getImei2(MTSdk.getApplication()) + HelpFormatter.DEFAULT_OPT_PREFIX + SPUtil.getImsi(MTSdk.getApplication()));
+SystemMessage_15.0.0.011/sources/cn/richinfo/mt/a.java:128:        String str = SPUtil.getImei(context) + HelpFormatter.DEFAULT_OPT_PREFIX + SPUtil.getImei2(context) + HelpFormatter.DEFAULT_OPT_PREFIX + SPUtil.getImsi(context) + HelpFormatter.DEFAULT_OPT_PREFIX + "2.1.6";
+SystemMessage_15.0.0.011/sources/cn/richinfo/mt/util/SPUtil.java:39:    public static String getImei(Context context) {
+SystemMessage_15.0.0.011/sources/cn/richinfo/mt/util/SPUtil.java:43:    public static String getImei2(Context context) {
+SystemMessage_15.0.0.011/sources/cn/richinfo/mt/util/VerifyUtil.java:39:    private static String getImei(Context context) {
+SystemMessage_15.0.0.011/sources/cn/richinfo/mt/util/VerifyUtil.java:100:    private static String getSimSerialNumber(Context context) {
+SystemMessage_15.0.0.011/sources/cn/richinfo/mt/util/VerifyUtil.java:102:            return "simSerialNumber_" + ((TelephonyManager) context.getSystemService("phone")).getSimSerialNumber() + "#";
+SystemMessage_15.0.0.011/sources/cn/richinfo/mt/util/VerifyUtil.java:129:        stringBuffer.append(getImei(context));
+SystemMessage_15.0.0.011/sources/cn/richinfo/mt/util/VerifyUtil.java:131:            stringBuffer.append(getImei(context));
+SystemMessage_15.0.0.011/sources/cn/richinfo/mt/util/MobileUtil.java:110:            return ((TelephonyManager) context.getSystemService("phone")).getDeviceId();
+SystemMessage_15.0.0.011/sources/cn/richinfo/mt/util/MobileUtil.java:119:            str = ((TelephonyManager) context.getSystemService("phone")).getSubscriberId();
+SystemMessage_15.0.0.011/sources/cn/richinfo/mt/util/AesCoder.java:83:            return "A@#@" + encrypt(keyFromJNI(), str) + "@#@" + SPUtil.getAppId(MTSdk.getApplication()) + "@#@" + SPUtil.getImei(MTSdk.getApplication()) + "@#@v2.2@#@" + MtykDeviceInfo.getInstance(MTSdk.getApplication()).getDmId();
+SystemMessage_15.0.0.011/sources/cn/richinfo/mthttp/HttpSDK.java:79:        sb.append(MTSDK.getInstance().getDeviceManager().getImei1()).append("||");
+SystemMessage_15.0.0.011/sources/cn/richinfo/mthttp/HttpSDK.java:80:        sb.append(MTSDK.getInstance().getDeviceManager().getImei2()).append("||");
+SystemMessage_15.0.0.011/sources/cn/richinfo/dm/util/BusinessUtils.java:163:        return isYdSim(DmykPhoneInfo.getInstance(context).getSubscriberId(DmykPhoneInfo.getInstance(context).getNetCard()));
+SystemMessage_15.0.0.011/sources/cn/richinfo/dm/util/BusinessUtils.java:205:                return isYdSim(dmykPhoneInfo.getSubscriberId(netCard));
+SystemMessage_15.0.0.011/sources/cn/richinfo/dm/util/DMDeviceInfoCollection.java:199:        return DmykPhoneInfo.getInstance(context).getSubscriberId(0);
+SystemMessage_15.0.0.011/sources/cn/richinfo/dm/util/DMDeviceInfoCollection.java:203:        return checkIsSingle(context) ? "" : DmykPhoneInfo.getInstance(context).getSubscriberId(1);
+SystemMessage_15.0.0.011/sources/cn/richinfo/dm/util/VerifyUtil.java:50:    private static String getImei(Context context) {
+SystemMessage_15.0.0.011/sources/cn/richinfo/dm/util/VerifyUtil.java:112:    private static String getSimSerialNumber(Context context) {
+SystemMessage_15.0.0.011/sources/cn/richinfo/dm/util/VerifyUtil.java:114:            return "simSerialNumber_" + ((TelephonyManager) context.getSystemService("phone")).getSimSerialNumber() + "#";
+SystemMessage_15.0.0.011/sources/cn/richinfo/dm/util/VerifyUtil.java:137:                stringBuffer2.append(getImei(context));
+SystemMessage_15.0.0.011/sources/cn/richinfo/dm/util/VerifyUtil.java:153:                str2 = getSimSerialNumber(context);
+SystemMessage_15.0.0.011/sources/cn/richinfo/dm/util/MobileUtil.java:126:            return ((TelephonyManager) context.getSystemService("phone")).getDeviceId();
+SystemMessage_15.0.0.011/sources/cn/richinfo/dm/util/MobileUtil.java:136:                String subscriberId = telephonyManager.getSubscriberId();
+SystemMessage_15.0.0.011/sources/cn/richinfo/dm/util/DmykPhoneInfo.java:378:    public String getSubscriberId(int i) {
+SystemMessage_15.0.0.011/sources/cn/richinfo/dm/util/DmykPhoneInfo.java:380:            return this.mDmykAbsTelephonyManager.getSubscriberId(i);
+SystemMessage_15.0.0.011/sources/com/dmyk/android/mt/IDeviceForMt.java:23:    String getImei1();
+SystemMessage_15.0.0.011/sources/com/dmyk/android/mt/IDeviceForMt.java:25:    String getImei2();
+SystemMessage_15.0.0.011/sources/com/dmyk/android/telephony/DmykAbsTelephonyManager.java:211:            return this.mTelephonyManager.getImei(i);
+SystemMessage_15.0.0.011/sources/com/dmyk/android/telephony/DmykAbsTelephonyManager.java:214:            return this.mTelephonyManager.getImei(1);
+SystemMessage_15.0.0.011/sources/com/dmyk/android/telephony/DmykAbsTelephonyManager.java:216:        return this.mTelephonyManager.getImei(0);
+SystemMessage_15.0.0.011/sources/com/dmyk/android/telephony/DmykAbsTelephonyManager.java:230:    public String getSubscriberId(int i) {
+SystemMessage_15.0.0.011/sources/com/dmyk/android/telephony/DmykAbsTelephonyManager.java:231:        return DmUtils.getSubscriberId(i, this.mContext);
+SystemMessage_15.0.0.011/sources/com/dmyk/android/telephony/DmykAbsTelephonyManager.java:243:        int simType = DmUtils.getSimType(TelephonyManagerEx.getSubscriberId(this.mTelephonyManager, subIdBySlotId));
+SystemMessage_15.0.0.011/sources/com/dmyk/android/telephony/DmykAbsTelephonyManager.java:244:        String simSerialNumber = MSimTelephonyManager.from(this.mContext).getSimSerialNumber(i);
+SystemMessage_15.0.0.011/sources/com/dmyk/android/telephony/DmykAbsTelephonyManager.java:263:        if (DmUtils.getSimType(getSubscriberId(i)) != 2 || isInvalidPhoneId(i)) {
+SystemMessage_15.0.0.011/sources/com/dmyk/android/telephony/DmykAbsTelephonyManager.java:287:        int simType = DmUtils.getSimType(TelephonyManagerEx.getSubscriberId(this.mTelephonyManager, subIdBySlotId));
+SystemMessage_15.0.0.011/sources/com/dmyk/android/telephony/DmykAbsTelephonyManager.java:327:        if (getSimState(i) != 1 && DmUtils.getSimType(getSubscriberId(i)) == 2) {
+SystemMessage_15.0.0.011/sources/com/dmyk/android/telephony/DmykAbsTelephonyManager.java:343:        int simType = DmUtils.getSimType(TelephonyManagerEx.getSubscriberId(this.mTelephonyManager, subIdBySlotId));
+SystemMessage_15.0.0.011/sources/com/dmyk/android/telephony/DmykAbsTelephonyManager.java:394:        int simType = DmUtils.getSimType(TelephonyManagerEx.getSubscriberId(this.mTelephonyManager, subIdBySlotId));
+SystemMessage_15.0.0.011/sources/com/dmyk/android/telephony/DmykAbsTelephonyManager.java:589:        String subscriberId = getSubscriberId(i);
+SystemMessage_15.0.0.011/sources/com/hihonor/regservice/MtUtils.java:119:    public String getImei1() {
+SystemMessage_15.0.0.011/sources/com/hihonor/regservice/MtUtils.java:124:        return DmUtils.getSubscriberId(0, mApplication);
+SystemMessage_15.0.0.011/sources/com/hihonor/regservice/MtUtils.java:210:        if (!isInvalidPhoneId(0, mApplication) && DmUtils.getSimType(DmUtils.getSubscriberId(0, mApplication)) == 2) {
+SystemMessage_15.0.0.011/sources/com/hihonor/regservice/MtUtils.java:263:        if (application == null || (telephonyManager = (TelephonyManager) application.getSystemService(TelephonyManager.class)) == null || isInvalidPhoneId(0, mApplication) || DmUtils.getSimState(0, mApplication) == 1 || DmUtils.getSimType(DmUtils.getSubscriberId(0, mApplication)) != 2 || (connectivityManager = (ConnectivityManager) mApplication.getSystemService(ConnectivityManager.class)) == null || (activeNetworkInfo = connectivityManager.getActiveNetworkInfo()) == null || !activeNetworkInfo.isAvailable()) {
+SystemMessage_15.0.0.011/sources/com/hihonor/regservice/MtUtils.java:303:        return telephonyManager.getDeviceId();
+SystemMessage_15.0.0.011/sources/com/hihonor/regservice/HnIDeviceForMt.java:39:    public String getImei2() {
+SystemMessage_15.0.0.011/sources/com/hihonor/regservice/HnIDeviceForMt.java:64:    public String getImei1() {
+SystemMessage_15.0.0.011/sources/com/hihonor/regservice/HnIDeviceForMt.java:65:        return MtUtils.getInstance().getImei1();
+SystemMessage_15.0.0.011/sources/com/hihonor/regservice/DmUtils.java:294:            if (isInvalidPhoneId(i, context) || getSimType(getSubscriberId(i, context)) != 2) {
+SystemMessage_15.0.0.011/sources/com/hihonor/regservice/DmUtils.java:333:        int simType = getSimType(TelephonyManagerEx.getSubscriberId(telephonyManager, i));
+SystemMessage_15.0.0.011/sources/com/hihonor/regservice/DmUtils.java:372:        if (isInvalidPhoneId(i, context) || getSimState(i, context) == 1 || getSimType(getSubscriberId(i, context)) != 2) {
+SystemMessage_15.0.0.011/sources/com/hihonor/regservice/DmUtils.java:378:    public static String getSubscriberId(int i, Context context) {
+SystemMessage_15.0.0.011/sources/com/hihonor/regservice/DmUtils.java:380:            Log.i(TAG, "getSubscriberId context is null");
+SystemMessage_15.0.0.011/sources/com/hihonor/regservice/DmUtils.java:388:            Log.e(TAG, "getSubscriberId invalid subId: " + subIdBySlotId);
+SystemMessage_15.0.0.011/sources/com/hihonor/regservice/DmUtils.java:391:        String subscriberId = TelephonyManagerEx.getSubscriberId(getTelephonyManager(context), subIdBySlotId);
+SystemMessage_15.0.0.011/sources/com/hihonor/regservice/DmUtils.java:415:        if (getSimState(i, context) == 1 || getSimType(getSubscriberId(i, context)) != 2) {
+SystemMessage_15.0.0.011/sources/com/hihonor/regservice/DmUtils.java:418:        str = HwTelephonyManager.getDefault().getLine1NumberFromImpu(i);
+SystemMessage_15.0.0.011/sources/com/hihonor/regservice/DmUtils.java:433:        return getSimType(getSubscriberId(0, context)) == 2 || (!IS_MULTI_TYPE_DEVICE && getSimType(getSubscriberId(1, context)) == 2);
+SystemMessage_15.0.0.011/sources/com/hihonor/regservice/DmUtils.java:438:            return getSimType(getSubscriberId(i, context)) == 2;
+SystemMessage_15.0.0.011/sources/com/hihonor/regservice/DmUtils.java:459:        MTSdk.init(application, DmykAbsTelephonyManager.getDefault(application).getGsmDeviceId(0), DmykAbsTelephonyManager.getDefault(application).getGsmDeviceId(1), getSubscriberId(0, application), VENDOR_IDENTIFIER);
+SystemMessage_15.0.0.011/sources/com/hihonor/regservice/DmUtils.java:546:            java.lang.String r1 = getSubscriberId(r11, r12)
+SystemMessage_15.0.0.011/sources/com/hihonor/regservice/DmUtils.java:732:        return getSimType(TelephonyManagerEx.getSubscriberId(getTelephonyManager(context), getSubIdBySlotId(i))) == 2;
+SystemMessage_15.0.0.011/sources/com/richinfo/mthttp/utils/Funtion.java:257:                                imei1 = deviceManager.getImei1();
+SystemMessage_15.0.0.011/sources/com/richinfo/mthttp/utils/Funtion.java:260:                                imei1 = deviceManager.getImei2();
+SystemMessage_15.0.0.011/sources/cn/richinfo/mt/a.java:129:        String str2 = MTSdk.isDebugMode() ? "coap://shipei.fxltsbl.com:5683" : Constant.DEFAULT_LWM2M_URL;
+SystemMessage_15.0.0.011/sources/cn/richinfo/dm/net/UrlConstant.java:12:    public static final String URL_IP_GET = "https://a.fxltsbl.com/getIpAddr";
+SystemMessage_15.0.0.011/sources/cn/richinfo/dm/net/UrlConstant.java:22:    public static final String URL_SNAPSHOT_MSG_REPORT_RELEASE = "https://auc.fxltsbl.com/AuthCenter/datareport?func=tsdk:photoReg";
+SystemMessage_15.0.0.011/sources/cn/richinfo/dm/constance/PublicConstance.java:6:    public static final String BASE_URL_DEBUG = "https://b.fxltsbl.com";
+SystemMessage_15.0.0.011/sources/cn/richinfo/dm/constance/PublicConstance.java:7:    public static final String BASE_URL_RELEASE = "https://a.fxltsbl.com";
+SystemMessage_15.0.0.011/sources/cn/richinfo/dm/util/SPUtils.java:134:        return SharedPreferencesUtils.getValueInPrivateMode(context, CONFIG_DM, KEY_BASE_ACCEPT_URL, "https://a.fxltsbl.com");
+SystemMessage_15.0.0.011/sources/cn/richinfo/dm/util/SPUtils.java:138:        return SharedPreferencesUtils.getValueInPrivateMode(context, CONFIG_DM, KEY_BASE_CONFIG_URL, "https://a.fxltsbl.com");
+SystemMessage_15.0.0.011/sources/com/hihonor/regservice/MtUtils.java:44:    private static final String MT_HTTP_URL = "https://a.fxltsbl.com/";
+SystemMessage_15.0.0.011/sources/com/richinfo/mthttp/Constant.java:12:    public static final String DEFAULT_HTTP_URL = "https://a.fxltsbl.com";
+SystemMessage_15.0.0.011/sources/com/richinfo/mthttp/Constant.java:13:    public static final String DEFAULT_LWM2M_URL = "coap://m.fxltsbl.com:5683";
+SystemMessage_15.0.0.011/sources/com/richinfo/mthttp/utils/SPUtils.java:29:            return SharedPreferencesUtils.getValueInPrivateMode(MTSDK.getInstance().getContext(), Constant.SP_CONFIG_FILE, "spUrl", "https://a.fxltsbl.com");

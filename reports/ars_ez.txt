@@ -1,0 +1,11 @@
+610:    public static String z(Context context) {
+611-        if (context == null) {
+612-            return null;
+613-        }
+614-        String string = Settings.System.getString(context.getContentResolver(), "autoreg_destination_num");
+615-        if (string != null) {
+616-            AutoRegSmsApp.d("getSMSDestinationNum not null.");
+617-        }
+618-        return string;
+619-    }
+620-}

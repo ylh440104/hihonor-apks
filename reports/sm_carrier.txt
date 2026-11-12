@@ -1,0 +1,4 @@
+jadx/SystemMessage_15.0.0.011/sources/cn/richinfo/dm/util/BusinessUtils.java:61:        return isYdSim(imsi1) || isYdSim(imsi2);
+jadx/SystemMessage_15.0.0.011/sources/cn/richinfo/dm/util/BusinessUtils.java:163:        return isYdSim(DmykPhoneInfo.getInstance(context).getSubscriberId(DmykPhoneInfo.getInstance(context).getNetCard()));
+jadx/SystemMessage_15.0.0.011/sources/cn/richinfo/dm/util/BusinessUtils.java:205:                return isYdSim(dmykPhoneInfo.getSubscriberId(netCard));
+jadx/SystemMessage_15.0.0.011/sources/cn/richinfo/dm/util/BusinessUtils.java:214:    private static boolean isYdSim(String str) {

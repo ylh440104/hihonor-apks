@@ -1,0 +1,11 @@
+AutoRegSms_15.1.0.100/sources/j/g.java:11:import com.hihonor.android.telephony.satellite.HnSatelliteSmsManager;
+AutoRegSms_15.1.0.100/sources/j/g.java:173:            new HnSatelliteSmsManager(this.f287d).sendDataMessage(str, (String) null, (short) 0, bArr, broadcast, (PendingIntent) null);
+AutoRegSms_15.1.0.100/sources/com/hihonor/android/AutoRegSms/h.java:12:import android.telephony.SmsManager;
+AutoRegSms_15.1.0.100/sources/com/hihonor/android/AutoRegSms/h.java:14:import com.hihonor.android.telephony.MSimSmsManager;
+AutoRegSms_15.1.0.100/sources/com/hihonor/android/AutoRegSms/h.java:262:                MSimSmsManager.getDefault().sendDataMessage(str, (String) null, (short) 0, a2, broadcast, (PendingIntent) null, e.B(e.f125d));
+AutoRegSms_15.1.0.100/sources/com/hihonor/android/AutoRegSms/h.java:264:                SmsManager.getDefault().sendDataMessage(str, null, (short) 0, a2, broadcast, null);
+AutoRegSms_15.1.0.100/sources/com/hihonor/android/AutoRegSms/e.java:10:import android.telephony.SmsManager;
+AutoRegSms_15.1.0.100/sources/com/hihonor/android/AutoRegSms/e.java:17:import com.hihonor.android.telephony.SmsManagerEx;
+AutoRegSms_15.1.0.100/sources/com/hihonor/android/AutoRegSms/e.java:192:            z = SmsManagerEx.isUimSupportMeid(SmsManager.getSmsManagerForSubscriptionId(B(f125d)));
+AutoRegSms_15.1.0.100/sources/com/hihonor/android/AutoRegSms/e.java:198:        AutoRegSmsApp.d("setCTUIMDeviceID result " + (z ? SmsManagerEx.setMeidOrPesn(SmsManager.getSmsManagerForSubscriptionId(B(f125d)), str, (String) null) : SmsManagerEx.setMeidOrPesn(SmsManager.getSmsManagerForSubscriptionId(B(f125d)), (String) null, str2)));
+AutoRegSms_15.1.0.100/sources/com/hihonor/android/AutoRegSms/e.java:375:            return SmsManagerEx.getMeidOrPesn(SmsManager.getSmsManagerForSubscriptionId(B(f125d)));
